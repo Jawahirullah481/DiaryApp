@@ -41,10 +41,6 @@ public class LoginServlet extends HttpServlet {
 		else {
 			
 //			"invalidUser" attribute decides whether the login.jsp show invalid username, password or not
-//			request.setAttribute("invalidUser", true);
-			
-//			requestDispatcher = request.getRequestDispatcher("/loginPage");
-//			requestDispatcher.forward(request, response);
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("invalidUser", true);
