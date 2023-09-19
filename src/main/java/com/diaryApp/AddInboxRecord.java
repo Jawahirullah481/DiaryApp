@@ -1,13 +1,8 @@
 package com.diaryApp;
 
-import java.awt.Window;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Deque;
 import java.util.Iterator;
-
-import com.oracle.wls.shaded.org.apache.xml.utils.DOMHelper;
 
 import jakarta.servlet.jsp.JspWriter;
 import jakarta.servlet.jsp.PageContext;
