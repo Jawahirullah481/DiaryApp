@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.row {
+    margin: 0;
+}
+
+#navbar-top {
+    position: sticky;
+    width: 100vw;
+    top: 0px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.199);
+    z-index: 2;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.navbar-brand:hover{
+    color: #0d6efd;
+}
+
+.navbar-brand img {
+    height: 55px;
+    height: 35px;
+}
+
+
+.navbar .navbar-collapse .nav-link {
+    background-color: red;
+    color: white;
+    padding: 5px 20px;
+    margin-right: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: .9rem;
+}
+
+.navbar .navbar-collapse .nav-link:hover{
+    background-color: #5d9eff;
+}
+
+/* -----------style for footer--------------------- */
+
+ /* ---------------Style for footer------------------------ */
+
+ .footer {
+    background-color: rgb(0, 0, 121);
+    padding: 60px 20px;
+    /* position: sticky;
+    bottom: -100%; */
+}
+
+.footer .row .col-12 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+.footer .card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.footer .card h1 {
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer .card a {
+    text-decoration: none;
+}
+
+.footer .card p {
+    font-size: .75rem;
+    color: rgb(143, 143, 143);
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #navbar-top{
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .navbar-brand img {
+        height: 35px;
+    }
+
+    .navbar .navbar-collapse .nav-link {
+        font-size: .75rem;
+        padding: 7px 15px;
+    }
+
+
+    /* -------------------- */
+
+    .footer{
+        padding: 40px 20px;
+    }
+
+    .footer .row .col-12 {
+        justify-content: flex-start;
+    }
+
+    .footer .card h1 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .footer .card p {
+        font-size: 1rem;
+        margin-bottom: 7px;
+    }
+
+}

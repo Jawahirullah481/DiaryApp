@@ -1,0 +1,124 @@
+ #user-initial {
+ 	width: 33px;
+ 	height: 33px;
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+ 	background-color: rgb(0, 64, 255);
+ 	color: white;
+ 	border-radius: 50%;
+ 	padding: 0;
+ 	font-size: 1.2rem;
+ 	font-weight: 600;
+ 	
+ }
+
+ #inbox-overview {
+ 	padding: 20px 25px;
+ 	width: 100%;
+ 	display: flex;
+ 	flex-wrap: wrap;
+ 	align-items: center;
+ 	justify-content: flex-start;
+ 	column-gap: 15px;
+ 	row-gap: 10px;
+ 	border-bottom: 1px solid rgb(205, 205, 205);
+ 	margin-bottom: 25px;
+ 	position: sticky;
+ 	top: 45px;
+ 	z-index: 1;
+ 	background-color: white;
+ }
+
+ .overview-pill {
+ 	font-size: .75rem;
+ 	font-weight: 400;
+ 	color: white;
+ 	width: max-content;
+ 	display: flex;
+ 	align-items: center;
+ 	column-gap: 6px;
+ 	height: 32px;
+ 	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+ }
+
+ .overview-pill .inside-data {
+ 	display: inline-flex;
+ 	align-items: center;
+ 	justify-content: center;
+ 	padding: 3px 8px;
+ 	background-color: orange;
+ 	border-radius: 15px;
+ 	font-size: .7rem;
+ }
+
+ #new-diary {
+ 	margin-left: auto;
+ 	background-color: rgb(255, 53, 53) !important;
+ 	cursor: pointer;
+ 	text-decoration: none !important;
+ }
+
+ #new-diary:hover {
+ 	background-color: black !important;
+ }
+
+ .overview-pill .plus {
+ 	display: flex;
+ 	height: 22px;
+ 	width: 22px;
+ 	align-items: center;
+ 	justify-content: center;
+ 	font-size: 28px;
+ 	font-weight: 400;
+ }
+
+ #inbox-holder {
+ 	margin-bottom: 30px;
+ }
+
+ #inbox-holder .note {
+ 	background-color: #CAE8FF;
+ 	padding: 8px 8px 18px 8px;
+ 	position: relative;
+ 	border-radius: 10px;
+ 	margin-bottom: 10px;
+ 	box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+ }
+
+ #inbox-holder .note:hover {
+ 	box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+ 	background-color: #b6dfff;
+ }
+
+ #inbox-holder .note-heading {
+ 	font-size: .9rem;
+ 	color: black;
+ 	font-weight: bold;
+ 	height: 20px;
+ 	margin-bottom: 3px;
+ }
+
+ #inbox-holder .note-content {
+ 	font-size: .7rem;
+ 	height: 1rem;
+ 	overflow-y: hidden;
+ 	text-overflow: ellipsis;
+ 	margin-bottom: 3px;
+ }
+
+ #inbox-holder .last-edited {
+ 	font-size: .6rem;
+ 	color: rgb(98, 98, 98);
+ 	position: absolute;
+ 	right: 8px;
+ }
+
+ /* -------------------media queried-------------------- */
+
+ @media (max-width: 576px) {
+ 	#new-diary {
+ 		margin-left: 0px;
+ 	}
+
+ }

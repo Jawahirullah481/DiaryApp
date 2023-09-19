@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Welcome to Diary App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="general.css">
+    <style>
+        /* -------------Style for welcome---------------- */
+
+        section.welcome {
+            width: 100vw;
+            height: 100vh;
+            background-color: #0D6EFD;
+        }
+
+        section.welcome div.row {
+            height: 100vh;
+        }
+
+        section.welcome .intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            color: white;
+            text-align: center;
+            transform: translateY(-27px);
+        }
+
+        section.welcome .intro h1 {
+            font-size: 2.85rem;
+        }
+
+        section.welcome .intro p {
+            font-size: 1rem;
+        }
+
+
+        section.welcome .intro-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 300px;
+            transform: translateY(-27px);
+        }
+
+        section.welcome .intro-img img {
+            height: 300px;
+            max-height: 300px;
+        }
+
+        /*------------------ End of style for welcome----------------- */
+
+        /* -------------------Style for about---------------------- */
+
+        .about {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 20px 150px;
+        }
+
+        .about>h1 {
+            margin-right: auto;
+            margin-left: 40px;
+            margin-bottom: 60px;
+            font-size: 1.85rem;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        .about .card {
+            height: 100%;
+            min-height: 200px;
+            max-width: 280px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 10px 3px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+
+        .about .card:hover {
+            box-shadow: 0 8px 15px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .about .card h1,
+        .about .card p {
+            color: rgb(44, 44, 44);
+        }
+
+        .about .card h1 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .about .card p {
+            font-size: .8rem;
+        }
+
+        /* ------------------End of style for about--------------- */
+
+        /* ---------------Style for footer------------------------ */
+
+        .footer {
+            background-color: rgb(0, 0, 121);
+            padding: 60px 20px;
+            position: sticky;
+            bottom: -100%;
+        }
+
+        .footer .row .col-12 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+        }
+
+        .footer .card {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            border: none;
+            background-color: transparent;
+        }
+
+        .footer .card h1 {
+            font-size: 1rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer .card a {
+            text-decoration: none;
+        }
+
+        .footer .card p {
+            font-size: .75rem;
+            color: rgb(143, 143, 143);
+            margin-bottom: 5px;
+        }
+
+        /* ------------media query----------- */
+
+        @media only screen and (max-width: 768px) {
+
+            section.welcome {
+                max-height: 100vh;
+                padding-top: 70px;
+            }
+
+            section.welcome div.row {
+                height: 100%;
+            }
+
+            section.welcome .intro h1 {
+                font-size: 2.5rem;
+            }
+
+            section.welcome .intro p {
+                font-size: 1.25rem;
+            }
+
+            section.welcome .intro,
+            section.welcome .intro-img {
+                height: 35vh;
+            }
+
+            section.welcome .intro-img img {
+                max-width: 80vw;
+                height: auto;
+            }
+
+            .about {
+                padding-top: 45px;
+                padding-bottom: 80px;
+            }
+
+            .about>h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+                margin-left: 0px;
+            }
+
+            .footer .row .col-12 {
+                justify-content: flex-start;
+            }
+            
+            .footer .card{
+				align-items: center;
+			}
+
+            .footer .card h1 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+
+            .footer .card p {
+                font-size: 1rem;
+                margin-bottom: 7px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+
+        <!------------------------------- Navigation------------------------ -->
+
+        <nav class="navbar navbar-expand py-0" id="navbar-top">
+            <div class="container-fluid px-0 px-sm-3 px-lg-5 py-lg-1">
+                <a class="navbar-brand" href="#">
+                    <img src="https://mir-s3-cdn-cf.behance.net/projects/202/4bda1d52157575.Y3JvcCwxMDAyLDc4NCwwLDk.png"
+                        alt="">
+                    Diary App
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="loginPage">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.html">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ----------End of navigation-------------------- -->
+
+        <!-- ------------------Intro section------------------------ -->
+
+        <section class="welcome bg-primary">
+            <div class="row px-5 d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                <div class="col-12 col-lg-6 order-2 order-lg-1 d-flex align-items-center justify-content-center">
+                    <div class="intro">
+                        <h1 class="fw-bold">Welcome to Diary App</h1>
+                        <p class="lead">An app for you daily notes.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-center mb-5">
+                    <div class="intro-img">
+                        <img src="https://geexar.com/wp-content/uploads/2020/09/content-writing.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ----------End of Intro section----------------- -->
+
+        <!-- ------------About section----------------------- -->
+
+        <section class="about">
+            <h1>About</h1>
+            <div class="row justify-content-start align-items-stretch justify-content-lg-center g-5">
+                <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
+                    <div class="card">
+                        <h1>Security</h1>
+                        <p>This app is completely secure. We don't share data with others.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus nam quam odio? Tenetur
+                            doloremque veniam iste officia praesentium non fugit, consequuntur reprehenderit
+                            consequatur! Commodi porro, soluta ea maxime tempora alias.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
+                    <div class="card">
+                        <h1>Free</h1>
+                        <p>This is free of cost. You don't need to pay anything.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et repellendus ullam ad sit
+                            voluptatem sapiente dignissimos aspernatur accusamus officiis earum!</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
+                    <div class="card">
+                        <h1>Usability</h1>
+                        <p>This app has rich user experience. You can use it easily.</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, voluptatum praesentium
+                            fuga earum voluptates reiciendis voluptatibus corporis id minima reprehenderit, maxime
+                            illum, temporibus tempore numquam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------------End of about section------------------- -->
+
+        <!-- -------------------Footer-------------------- -->
+
+        <section class="footer">
+            <div class="row d-flex align-items-start justify-content-center gap-5">
+                <div class="col-12 col-lg-4">
+                    <div class="card">
+                        <h1>Contact us</h1>
+                        <a href="">
+                            <p>+91 9090232325</p>
+                        </a>
+                        <a href="">
+                            <p>diaryapp@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card">
+                        <h1>Report</h1>
+                        <a href="">
+                            <p>Click here to report</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card">
+                        <h1>Our Services</h1>
+                        <a href="">
+                            <p>Diary app</p>
+                        </a>
+                        <a href="">
+                            <p>Web development</p>
+                        </a>
+                        <a href="">
+                            <p>Medicine</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------------End of footer----------------- -->
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="general.css">
+<title>Login</title>
+<style>
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+#navbar-top {
+	position: fixed;
+}
+
+#login-form {
+	width: 90%;
+	max-width: 400px;
+	border: 1px solid grey;
+	background-color: #0d6dfd;
+}
+
+#login-form a {
+	font-size: .75rem;
+}
+
+#login-form input[type="submit"]:hover {
+	background-color: red;
+	border: none;
+	color: white;
+	outline: none;
+}
+
+#login-form .error-msg {
+	font-size: .7rem;
+	color: orangered;
+	margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+	<div
+		class="container-fluid p-0 d-flex align-items-center justify-content-center">
+
+		<!-- ---------------Navigation bar-------------- -->
+
+		<nav class="navbar navbar-expand py-0" id="navbar-top">
+			<div class="container-fluid px-0 px-sm-3 px-lg-5 py-lg-1">
+				<a class="navbar-brand" href="index.html"> <img
+					src="https://mir-s3-cdn-cf.behance.net/projects/202/4bda1d52157575.Y3JvcCwxMDAyLDc4NCwwLDk.png"
+					alt=""> Diary App
+				</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item"><a class="nav-link" href="signup.html">Sign
+								up</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- ----------End of navigation-------------------- -->
+
+		<!-------------------- Login form-------------------- -->
+
+		<form action="login" method="POST" class="p-3 rounded-3" id="login-form">
+			<div class="row gy-3">
+				<div class="col-12">
+					<h1 class="text-center text-light fs-3">Login</h1>
+				</div>
+
+				<c:if test="${sessionScope.invalidUser}">
+					<div class="col-12">
+						<p class="text-center text-light error-msg">Invalid username
+							and password. Try again!</p>
+					</div>
+				</c:if>
+
+				<div class="col-12">
+					<div class="form-group">
+						<input type="text" name="username" id="username"
+							class="form-control form-control-sm"
+							placeholder="Username or email" required>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="form-group">
+						<input type="password" name="password" id="password"
+							class="form-control form-control-sm" placeholder="Password"
+							required>
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="form-group">
+						<input type="submit" value="Submit"
+							class="btn btn-danger btn-sm d-block m-auto px-3">
+					</div>
+				</div>
+				<div class="col-12 mt-2">
+					<a href="signup.html" class="text-warning d-block text-center">Don't
+						have an account? Create account</a>
+				</div>
+			</div>
+		</form>
+
+	</div>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
