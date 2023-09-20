@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,16 +11,6 @@
     <title>Edit diary</title>
 </head>
 <body>
-
-	<%
-		response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");
-		response.setHeader("Pragma", "no-cache");
-		response.setHeader("Expires", "0");
-		if(session.getAttribute("logged_in") == null)
-		{
-			response.sendRedirect("index.html");
-		}
-	%>
 	
 	<div class="container-fluid px-0">
 

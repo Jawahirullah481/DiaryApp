@@ -18,8 +18,6 @@ public class DeleteDiaryServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		checkLoggedIn(request, response);
-
 		int inboxid = Integer.parseInt(request.getParameter("inboxid"));
 		DiaryAppUser user = (DiaryAppUser)request.getSession().getAttribute("user");
 		int userid = user.getUserId();
@@ -33,22 +31,6 @@ public class DeleteDiaryServlet extends HttpServlet {
 		user.setLastEditedDate(LocalDate.now());
 		
 		response.sendRedirect("inbox");
-		
-	}
-	
-private void checkLoggedIn(HttpServletRequest request, HttpServletResponse response) {
-		
-		response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");
-		response.setHeader("Pragma", "no-cache");
-		response.setHeader("Expires", "0");
-		if(request.getSession().getAttribute("logged_in") == null)
-		{
-			try {
-				response.sendRedirect("index.html");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 		
 	}
 

@@ -18,9 +18,7 @@ public class EditUserServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		checkLoggedIn(request, response);
-		
+				
 		String username = request.getParameter("username").trim();
 		String emailid = request.getParameter("email").trim();
 		String oldPassword = request.getParameter("oldpassword").trim();
@@ -56,22 +54,6 @@ public class EditUserServlet extends HttpServlet {
 			request.getSession().setAttribute("invalidPassword", true);
 			response.sendRedirect("edituserinfopage");
 		}
-	}
-	
-private void checkLoggedIn(HttpServletRequest request, HttpServletResponse response) {
-		
-		response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");
-		response.setHeader("Pragma", "no-cache");
-		response.setHeader("Expires", "0");
-		if(request.getSession().getAttribute("logged_in") == null)
-		{
-			try {
-				response.sendRedirect("index.html");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
 	}
 
 }

@@ -94,7 +94,8 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteUserServlet</servlet-name>
-    <url-pattern>/deleteuser</url-pattern></servlet-mapping>
+    <url-pattern>/deleteuser</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>EditDiaryPage</servlet-name>
     <jsp-file>/editdiary.jsp</jsp-file>
@@ -147,4 +148,24 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/LogoutServlet</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>LoginFilter</display-name>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.diaryApp.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/logout</url-pattern>
+    <url-pattern>/inbox</url-pattern>
+    <url-pattern>/newdiary</url-pattern>
+    <url-pattern>/editdiaryservlet</url-pattern>
+    <url-pattern>/LogoutServlet</url-pattern>
+    <url-pattern>/edituser</url-pattern>
+    <url-pattern>/edituserinfopage</url-pattern>
+    <url-pattern>/userinfo</url-pattern>
+    <url-pattern>/newdiarypage</url-pattern>
+    <url-pattern>/editdiary</url-pattern>
+    <url-pattern>/deleteuser</url-pattern>
+    <url-pattern>/deletediary/deletediary</url-pattern>
+  </filter-mapping>
 </web-app>

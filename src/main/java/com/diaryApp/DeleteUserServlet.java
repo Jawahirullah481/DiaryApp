@@ -14,30 +14,12 @@ public class DeleteUserServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		checkLoggedIn(request, response);
-		
+				
 		DiaryAppUser user = (DiaryAppUser)request.getSession().getAttribute("user");
 		DBA.deleteUser(user.getUserId());
 		RequestDispatcher rsDispatcher = request.getRequestDispatcher("/logout");
 		rsDispatcher.forward(request, response);
 	}
 
-	
-private void checkLoggedIn(HttpServletRequest request, HttpServletResponse response) {
-		
-		response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");
-		response.setHeader("Pragma", "no-cache");
-		response.setHeader("Expires", "0");
-		if(request.getSession().getAttribute("logged_in") == null)
-		{
-			try {
-				response.sendRedirect("index.html");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-	}
 
 }

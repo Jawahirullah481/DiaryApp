@@ -1,5 +1,7 @@
 package com.diaryApp;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
@@ -8,31 +10,29 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.time.LocalDate;
 import java.util.ArrayDeque;
 import java.util.Deque;
-
-import org.apache.catalina.filters.CsrfPreventionFilter;
-import org.apache.naming.java.javaURLContextFactory;
+import java.util.Properties;
 
 
 public class DBA {
 
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/diaryapp";
-	private static final String USER_NAME = "username";
+	private static final String USER_NAME = "root";
 	private static final String PASSWORD = "password";
 	
 //	PreparedStatement Queries
 	
 	private static final String querySignupUser = "insert into diaryappuser (Username, EmailId, Password) values(?, ?, ?)";
-	private static final String queryLoginUser = "select UserId from diaryappuser where (Username = ? or EmailId = ?) and Password = ?";
+	private static final String queryLoginUser = "select UserId from diaryappuser where (Username like binary ? or EmailId like binary ?) and Password like binary ?";
 	private static final String queryGetUser = "select user.userid, user.username, user.emailid, user.password from diaryappuser as user where user.userId = ?";
 	private static final String queryGetInbox = "select inbox.id, inbox.heading, inbox.date, inbox.content from diaryappinbox as inbox inner join diaryappuser as user on inbox.userid = user.userid where inbox.userid = ?";
 	private static final String queryAddNewDiary = "insert into diaryappinbox (heading, date, content, userid) values(?, ?, ?, ?)";
 	private static final String queryGetLatestDiary = "select id from diaryappinbox where userid = ? order by id desc limit 1";
 	private static final String queryDeletDiary = "delete from diaryappinbox where id = ?";
 	private static final String queryEditUserInfo = "update diaryappuser set username = ?, emailId = ?, password = ? where userid = ?";
-
+	
+	
 	public static Connection getConnection(){
 		
 		Connection connection = null;
@@ -224,7 +224,7 @@ public class DBA {
 			statement.setInt(5, userid);
 			
 			statement.execute();
-			
+						
 			// Returning new generated inboxid
 			return statement.getInt(4);
 			

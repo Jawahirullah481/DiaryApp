@@ -22,9 +22,7 @@ public class EditDiaryServlet extends HttpServlet {
 	
  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		checkLoggedIn(request, response);
-		
+						
 		String heading = request.getParameter("heading");
 		String content =  request.getParameter("content");
 		int inboxid = Integer.parseInt(request.getParameter("inboxid"));
@@ -53,23 +51,6 @@ public class EditDiaryServlet extends HttpServlet {
 		{
 			e.printStackTrace();
 			System.out.println("Error while forwarding to inbox from EditDiaryServlet");
-		}
-		
-	}
-
-
-	private void checkLoggedIn(HttpServletRequest request, HttpServletResponse response) {
-		
-		response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");
-		response.setHeader("Pragma", "no-cache");
-		response.setHeader("Expires", "0");
-		if(request.getSession().getAttribute("logged_in") == null)
-		{
-			try {
-				response.sendRedirect("index.html");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
 		
 	}
