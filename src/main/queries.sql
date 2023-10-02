@@ -1,9 +1,9 @@
 -- Creating diaryapp database--
-create database diaryappclone;
+create database diaryapp;
 
 
 -- selecting the database--
-use diaryappclone;
+use diaryapp;
 
 
 -- Creating diaryappuser table --
